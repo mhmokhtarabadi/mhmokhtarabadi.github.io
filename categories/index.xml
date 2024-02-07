@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Categories - Category - Homepage</title>
+        <link>https://mhmokhtarabadi.github.io/categories/</link>
+        <description>Categories - Category - Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>mh.mokhtarabadi@gmail.com (Mohamadhasan)</managingEditor>
+            <webMaster>mh.mokhtarabadi@gmail.com (Mohamadhasan)</webMaster><atom:link href="https://mhmokhtarabadi.github.io/categories/" rel="self" type="application/rss+xml" /></channel>
+</rss>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Simple Inverse Kinematics - Homepage</title><meta name="Description" content="A simple two DoF inverse kinematics in MATLAB."><meta property="og:title" content="Simple Inverse Kinematics" />
+<meta property="og:description" content="A simple two DoF inverse kinematics in MATLAB." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://mhmokhtarabadi.github.io/posts/simple-inverse-kinematics/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-08-19T12:43:33+03:30" />
+<meta property="article:modified_time" content="2023-08-19T12:43:33+03:30" /><meta property="og:site_name" content="My cool site" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Simple Inverse Kinematics"/>
+<meta name="twitter:description" content="A simple two DoF inverse kinematics in MATLAB."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://mhmokhtarabadi.github.io/posts/simple-inverse-kinematics/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Simple Inverse Kinematics",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/mhmokhtarabadi.github.io\/posts\/simple-inverse-kinematics\/"
+        },"genre": "posts","wordcount":  1127 ,
+        "url": "https:\/\/mhmokhtarabadi.github.io\/posts\/simple-inverse-kinematics\/","datePublished": "2023-08-19T12:43:33+03:30","dateModified": "2023-08-19T12:43:33+03:30","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Mohamadhasan"
+            },"description": "A simple two DoF inverse kinematics in MATLAB."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Homepage">Mohamadhasan</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/about"> About </a><a class="menu-item" href="/resume"> Resume </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Homepage">Mohamadhasan</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/about" title="">About</a><a class="menu-item" href="/resume" title="">Resume</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Simple Inverse Kinematics</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Mohamadhasan</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-08-19">2023-08-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1127 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-introduction">1. Introduction</a></li>
+    <li><a href="#2-mathematical-equations">2. Mathematical Equations</a></li>
+    <li><a href="#3-matlab-implementation">3. MATLAB Implementation</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>A simple two DoF inverse kinematics in MATLAB.</p>
+<hr>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>As you may already know, there are two major ways to solve Inverse Kinematics (IK) problems. Analytical, and Numerical approaches. In these two approaches, the solver will find a set of coordinates which specify the robot configuration in order to satisfy some constraints, for example position of a point or orientation of a link of the robot.</p>
+<p>However, in this blog we want to how a two DoF robot can travel a path to in order for it&rsquo;s end point to reach a desired position. We then write a MATLAB program that shows the real-time animation of this robot. We can specify the desired position by clicking on a point in robot feasible regin, and robot will try to reach that point.</p>
+<hr>
+<h2 id="2-mathematical-equations">2. Mathematical Equations</h2>
+<p>From robot arm shown in figure bellow, the position of it&rsquo;s end point (point A) is:</p>
+<p>\begin{equation}
+\begin{split}
+&amp;x_A = L_1 \cos(\theta_1) + L_2 \cos(\theta_2) \\
+&amp;y_A = L_1 \sin(\theta_1) + L_2 \sin(\theta_2)
+\end{split}
+\end{equation}</p>
+<!-- raw HTML omitted -->
+<p>So if the desired position is $(x_D, y_D)$, then the vector from point A to point D would be:</p>
+<p>\begin{equation}
+\vec{d} = \begin{bmatrix}
+x_D-x_A \\
+y_D-y_A
+\end{bmatrix}
+\end{equation}</p>
+<p>Now if we assume that the velocity of point A to be $v_A$, if this point want to reach point D, the $x$ and $y$ component of it&rsquo;s velocity vector should be:</p>
+<p>\begin{equation}
+\begin{split}
+&amp;{v_A}_x = \frac{v_Ad_x}{\sqrt{d_x^2+d_y^2}} \\
+&amp;{v_A}_y = \frac{v_Ad_y}{\sqrt{d_x^2+d_y^2}}
+\end{split}
+\end{equation}</p>
+<p>Which in equation above, $d_x$ and $d_y$ are $x$ and $y$ components of vector $\vec{d}$. However, to control the robot configuration we need to know the angular velocity of it&rsquo;s DoFs ($\dot{\theta}_1$, $\dot{\theta}_2$). So if we take a time derivative from point A&rsquo;s position (equation #1), we have:</p>
+<p>\begin{equation}
+\begin{split}
+\dot{x}_a = \frac{\delta x_a}{\delta \theta_1}\dot{\theta}_1 + \frac{\delta x_a}{\delta \theta_2}\dot{\theta}_2 \\
+\dot{y}_a = \frac{\delta y_a}{\delta \theta_1}\dot{\theta}_1 + \frac{\delta y_a}{\delta \theta_2}\dot{\theta}_2
+\end{split}
+\longrightarrow
+\begin{bmatrix}
+\dot{x}_a \\
+\dot{y}_a
+\end{bmatrix} =
+\begin{bmatrix}
+\frac{\delta x_a}{\delta \theta_1} &amp; \frac{\delta x_a}{\delta \theta_2} \\
+\frac{\delta y_a}{\delta \theta_1} &amp; \frac{\delta y_a}{\delta \theta_2}
+\end{bmatrix}
+\begin{bmatrix}
+\dot{\theta}_a \\
+\dot{\theta}_a
+\end{bmatrix}
+\end{equation}</p>
+<p>Which matrix $\begin{bmatrix}\frac{\delta x_a}{\delta \theta_1} &amp; \frac{\delta x_a}{\delta \theta_2} \\ \frac{\delta y_a}{\delta \theta_1} &amp; \frac{\delta y_a}{\delta \theta_2}\end{bmatrix}$ is called Jacobian matrix ($J$), and in this robot is:</p>
+<p>\begin{equation}
+J =
+\begin{bmatrix}
+\frac{\delta x_a}{\delta \theta_1} &amp; \frac{\delta x_a}{\delta \theta_2} \\
+\frac{\delta y_a}{\delta \theta_1} &amp; \frac{\delta y_a}{\delta \theta_2}
+\end{bmatrix} =
+\begin{bmatrix}
+-L_1 \sin (\theta_1) &amp; -L_2 \sin (\theta_2) \\
+L_1 \cos (\theta_1) &amp; L_2 \cos (\theta_2)
+\end{bmatrix}
+\end{equation}</p>
+<p>Now, from equation 4, 5, we can calculate $\dot{\theta}_1$ and $\dot{\theta}_1$:</p>
+<p>\begin{equation}
+\begin{bmatrix}
+\dot{\theta}_1 \\
+\dot{\theta}_2
+\end{bmatrix} =
+\begin{bmatrix}
+-L_1 \sin (\theta_1) &amp; -L_2 \sin (\theta_2) \\
+L_1 \cos (\theta_1) &amp; L_2 \cos (\theta_2)
+\end{bmatrix}^{-1}
+\begin{bmatrix}
+\dot{x}_a \\
+\dot{y}_a
+\end{bmatrix}
+\end{equation}</p>
+<p>Which $\begin{bmatrix}\dot{x}_a \\ \dot{y}_a\end{bmatrix}$ is $\begin{bmatrix}{v_A}_x \\ {v_A}_y\end{bmatrix}$ in equation 3.</p>
+<p>That&rsquo;s it. Now if we know the current and desired position of point A, we can change $\theta_1$ and $\theta_2$ such that these two points match. Because we want to implement it discretely, $\theta_1$ and $\theta_2$ will be updated as bellow:</p>
+<p>\begin{equation}
+\begin{split}
+\theta_1^{(i)} = \theta_1^{(i-1)} + \dot{\theta}_1^{(i)} T_s \\
+\theta_2^{(i)} = \theta_2^{(i-1)} + \dot{\theta}_1^{(i)} T_s
+\end{split}
+\end{equation}</p>
+<p>Which $T_S$ is out program sample time (0.02 s), and $i$ is iteration number.</p>
+<hr>
+<h2 id="3-matlab-implementation">3. MATLAB Implementation</h2>
+<p>Now, we want to implement it using MATLAB. We want a plot that shows our robot with two connected lines. The desired end point of this robot will be specified by clicking on a point in that plot with our mouse.</p>
+<p>At the first part of our code, we have to specify some constants:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="n">clc</span><span class="p">;</span> <span class="n">clear</span><span class="p">;</span> <span class="n">close</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c">% Given Data</span>
+</span></span><span class="line"><span class="cl"><span class="n">L1</span> <span class="p">=</span> <span class="mf">1.0</span><span class="p">;</span>   <span class="c">% m</span>
+</span></span><span class="line"><span class="cl"><span class="n">L2</span> <span class="p">=</span> <span class="mf">0.5</span><span class="p">;</span>   <span class="c">% m</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">xD</span> <span class="p">=</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">;</span>  <span class="c">% initial desired position (x) - m</span>
+</span></span><span class="line"><span class="cl"><span class="n">yD</span> <span class="p">=</span> <span class="mf">0.8</span><span class="p">;</span>   <span class="c">% initial desired position (y) - m</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">theta1</span> <span class="p">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>   <span class="c">% initial theta1 - rad</span>
+</span></span><span class="line"><span class="cl"><span class="n">theta2</span> <span class="p">=</span> <span class="n">deg2rad</span><span class="p">(</span><span class="o">-</span><span class="mi">40</span><span class="p">);</span>  <span class="c">% initial theta2 - rad</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">velocity</span> <span class="p">=</span> <span class="mi">4</span><span class="p">;</span>   <span class="c">% end point velocity - m/s</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">sample_time</span> <span class="p">=</span> <span class="mf">0.02</span><span class="p">;</span>   <span class="c">% s</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">c1</span> <span class="p">=</span> <span class="mf">0.3</span><span class="p">;</span>   <span class="c">% theta filtering constant</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">min_det</span> <span class="p">=</span> <span class="mf">0.1</span><span class="p">;</span>  <span class="c">% minimum value of the determinant of the Jacobian matrix</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>We a first-order low-pass filter with $C_1$ constant to prevent sudden change in $\theta_1$ and $\theta_2$ values:</p>
+<p>\begin{equation}
+\theta_j^{(i)} = C_1 \theta_j^{(i)} + (1-C_1) \theta_j^{(i-1)}
+\end{equation}</p>
+<p>When the end point of our robot (A) will get close to the edges of feasible reigns, the determinant of Jacobian matrix will get close to zero, and makes it inaccurate to calculate it&rsquo;s inverse in equation 6. When the Jacobian matrix determinant is less than <code>min_det</code>, we will use Jacobian matrix from previous iteration.</p>
+<p>Here is the first part of our main loop:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl"><span class="c">% Main Loop</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">f1</span> <span class="p">=</span> <span class="n">figure</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">J</span> <span class="p">=</span> <span class="p">[</span><span class="mi">1</span> <span class="mi">0</span><span class="p">;</span> <span class="mi">0</span> <span class="mi">1</span><span class="p">];</span> <span class="c">% initial Jacobian matrix</span>
+</span></span><span class="line"><span class="cl"><span class="n">dtheta</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">:)</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">;</span> <span class="mi">0</span><span class="p">];</span>  <span class="c">% initial dtheta - rad/s^2</span>
+</span></span><span class="line"><span class="cl"><span class="nb">i</span> <span class="p">=</span> <span class="mi">2</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="k">while</span> <span class="n">true</span>
+</span></span><span class="line"><span class="cl">    <span class="c">% equation (1)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xA</span> <span class="p">=</span> <span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="o">+</span> <span class="n">L2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">yA</span> <span class="p">=</span> <span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="o">+</span> <span class="n">L2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% saving end points for plotting path</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">xA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">=</span> <span class="n">yA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% equation (2)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dx</span> <span class="p">=</span> <span class="n">xD</span> <span class="o">-</span> <span class="n">xA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dy</span> <span class="p">=</span> <span class="n">yD</span> <span class="o">-</span> <span class="n">yA</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% eduation (3)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dxA</span> <span class="p">=</span> <span class="n">velocity</span><span class="o">*</span><span class="n">dx</span> <span class="o">/</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">dx</span>^<span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span>^<span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dyA</span> <span class="p">=</span> <span class="n">velocity</span><span class="o">*</span><span class="n">dy</span> <span class="o">/</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">dx</span>^<span class="mi">2</span> <span class="o">+</span> <span class="n">dy</span>^<span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% equation (5)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">J_pre</span> <span class="p">=</span> <span class="n">J</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">J</span> <span class="p">=</span> <span class="p">[</span><span class="o">-</span><span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="o">-</span><span class="n">L2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">);</span> <span class="c">...</span>
+</span></span><span class="line"><span class="cl">          <span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="n">L2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">det</span><span class="p">(</span><span class="n">J</span><span class="p">))</span> <span class="o">&lt;</span> <span class="n">min_det</span>
+</span></span><span class="line"><span class="cl">        <span class="n">J</span> <span class="p">=</span> <span class="n">J_pre</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">% equation (6)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="p">:)</span> <span class="p">=</span>  <span class="n">J</span> <span class="o">\</span> <span class="p">[</span><span class="n">dxA</span><span class="p">;</span> <span class="n">dyA</span><span class="p">];</span>
+</span></span><span class="line"><span class="cl">    <span class="c">% equation (8)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="p">:)</span> <span class="p">=</span> <span class="n">c1</span><span class="o">*</span><span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="p">:)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">c1</span><span class="p">)</span><span class="o">*</span><span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">%equation (7)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">theta1</span> <span class="p">=</span> <span class="n">wrapTo2Pi</span><span class="p">(</span><span class="n">theta1</span> <span class="o">+</span> <span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">sample_time</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">theta2</span> <span class="p">=</span> <span class="n">wrapTo2Pi</span><span class="p">(</span><span class="n">theta2</span> <span class="o">+</span> <span class="n">dtheta</span><span class="p">(</span><span class="nb">i</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sample_time</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">i</span> <span class="p">=</span> <span class="nb">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>And here is the rest of out main loop to create a plot and animation of our robot:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-matlab" data-lang="matlab"><span class="line"><span class="cl">    <span class="c">% Ploting</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y1</span> <span class="p">=</span> <span class="p">[</span><span class="mi">0</span> <span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">x2</span> <span class="p">=</span> <span class="p">[</span><span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span><span class="o">+</span><span class="n">L2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta2</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y2</span> <span class="p">=</span> <span class="p">[</span><span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span> <span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span><span class="o">+</span><span class="n">L2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta2</span><span class="p">)];</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">figure</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">clf</span>
+</span></span><span class="line"><span class="cl">    <span class="n">axis</span> <span class="n">equal</span>
+</span></span><span class="line"><span class="cl">    <span class="n">grid</span> <span class="n">on</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xlim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">hold</span> <span class="n">on</span>
+</span></span><span class="line"><span class="cl">    <span class="n">line</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s">&#39;linewidth&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">line</span><span class="p">(</span><span class="n">x2</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s">&#39;linewidth&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;LineStyle&#39;</span><span class="p">,</span><span class="s">&#39;-.&#39;</span><span class="p">,</span> <span class="s">&#39;LineWidth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">scatter</span><span class="p">(</span><span class="n">xD</span><span class="p">,</span> <span class="n">yD</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;filled&#39;</span><span class="p">,</span> <span class="s">&#39;o&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">line</span><span class="p">([</span><span class="mi">0</span> <span class="mf">0.25</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">],</span> <span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;LineStyle&#39;</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;LineWidth&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text</span><span class="p">(</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="mf">0.2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="s">&#39;\theta_1&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">line</span><span class="p">([</span><span class="mi">0</span> <span class="mf">0.25</span><span class="p">]</span><span class="o">+</span><span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">),</span> <span class="s">&#39;color&#39;</span><span class="p">,</span> <span class="s">&#39;k&#39;</span><span class="p">,</span> <span class="s">&#39;LineStyle&#39;</span><span class="p">,</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;LineWidth&#39;</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">text</span><span class="p">(</span><span class="n">L1</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">theta2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">L1</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta1</span><span class="p">)</span><span class="o">+</span><span class="mf">0.2</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">theta2</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="s">&#39;\theta_2&#39;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">C</span> <span class="p">=</span> <span class="n">get</span> <span class="p">(</span><span class="n">gca</span><span class="p">,</span> <span class="s">&#39;CurrentPoint&#39;</span><span class="p">);</span>  <span class="c">% recieving clicked position</span>
+</span></span><span class="line"><span class="cl">    <span class="c">% saving clicked position as desired values</span>
+</span></span><span class="line"><span class="cl">    <span class="n">xD</span> <span class="p">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">yD</span> <span class="p">=</span> <span class="n">C</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pause</span><span class="p">(</span><span class="n">sample_time</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="./robot-animation.mkv"
+        data-srcset="./robot-animation.mkv, ./robot-animation.mkv 1.5x, ./robot-animation.mkv 2x"
+        data-sizes="auto"
+        alt="./robot-animation.mkv"
+        title="robot-animation" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-08-19</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
