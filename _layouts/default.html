@@ -7,13 +7,13 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
   <title>Mohamadhasan | {{ page.title }}</title>
-  <meta name="description" content="Martin Saveski">
-  <meta name="author" content="Martin Saveski">
-  <meta property="og:title" content="Martin Saveski" />
+  <meta name="description" content="Mohamadhasan Mokhtarabadi">
+  <meta name="author" content="Mohamadhasan Mokhtarabadi">
+  <meta property="og:title" content="Mohamadhasan Mokhtarabadi" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="http://www.martinsaveski.com" />
-  <meta property="og:site_name" content="Martin Saveski" />
-  <link rel="canonical" href="http://www.martinsaveski.com" />
+  <meta property="og:url" content="https://mhmokhtarabadi.github.io/" />
+  <meta property="og:site_name" content="Mohamadhasan Mokhtarabadi" />
+  <link rel="canonical" href="https://mhmokhtarabadi.github.io/" />
 
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -78,23 +78,24 @@
         <div class="nine columns main-description">
           <h3>{{ site.data.main_info.name }}</h3>
           <p>{{ site.data.main_info.title }}</p>
-          <p>{{ site.data.main_info.email }}</p>
+          <p><a href="mailto:{{ site.data.main_info.email }}" target="_blank"
+              style="color: black; text-decoration-line: none;">{{
+              site.data.main_info.email }}</a></p>
           <p>
-            <!-- <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </span>
 
-              <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-                <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-              </span> -->
-
-            <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
+            <a href='{{site.data.main_info.github}}' target="_blank" style="text-decoration: none; color: black;">
               <i class="fa fa-github" aria-hidden="true"></i>
-            </span>
+            </a>
 
-            <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" style="cursor: pointer">
+            <a href='{{site.data.main_info.google_scholar}}' target="_blank"
+              style="text-decoration: none; color: black;">
               <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
-            </span>
+            </a>
+
+            <a href='{{site.data.main_info.youtube}}' target="_blank" style="text-decoration: none; color: black;">
+              <i class="fa fa-youtube-play" aria-hidden="true"></i>
+            </a>
+
           </p>
         </div>
       </div>
@@ -104,15 +105,12 @@
     <nav class="navbar">
       <div class="container">
         <ul class="navbar-list">
-          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#bio" | prepend: site.baseurl }}>Bio</a>
-          </li>
-          <!-- <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#prospective-students" | prepend:
-              site.baseurl }}>Prospective Students</a></li> -->
+          <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#about" | prepend: site.baseurl
+              }}>About</a></li>
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#publications" | prepend: site.baseurl
               }}>Publications</a></li>
-          <!--<li class="navbar-item"><a class="navbar-link" href={{ "/index.html#projects" | prepend: site.baseurl }}>Projects</a></li>-->
           <li class="navbar-item"><a class="navbar-link" href={{ "/index.html#resume" | prepend: site.baseurl
-              }}>Vita</a></li>
+              }}>Resume</a></li>
         </ul>
       </div>
     </nav>
@@ -125,21 +123,27 @@
           {{ site.data.main_info.name }}
         </div>
         <div class="four columns">
-          {{ site.data.main_info.email }}
+          <a href="mailto:{{ site.data.main_info.email }}" target="_blank"
+            style="color: rgba(0, 0, 0, 0.4); text-decoration-line: none;">{{
+            site.data.main_info.email }}</a>
         </div>
         <div class="four columns">
-          <!-- <span onclick="window.open('{{ site.data.main_info.twitter }}')" style="cursor: pointer">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </span> -->
-          <!-- <span onclick="window.open('{{ site.data.main_info.linkedin }}')" style="cursor: pointer">
-            <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-          </span> -->
-          <span onclick="window.open('{{ site.data.main_info.github }}')" style="cursor: pointer">
+
+          <a href='{{site.data.main_info.github}}' target="_blank"
+            style="text-decoration: none; color: rgba(0, 0, 0, 0.4);">
             <i class="fa fa-github" aria-hidden="true"></i>
-          </span>
-          <span onclick="window.open('{{ site.data.main_info.google_scholar }}')" style="cursor: pointer">
+          </a>
+
+          <a href='{{site.data.main_info.google_scholar}}' target="_blank"
+            style="text-decoration: none; color: rgba(0, 0, 0, 0.4);">
             <i class="ai ai-google-scholar ai-lg" aria-hidden="true"></i>
-          </span>
+          </a>
+
+          <a href='{{site.data.main_info.youtube}}' target="_blank"
+            style="text-decoration: none; color: rgba(0, 0, 0, 0.4);">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+          </a>
+
         </div>
       </div>
     </div>
