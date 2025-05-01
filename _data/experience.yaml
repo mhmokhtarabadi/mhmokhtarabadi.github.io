@@ -1,6 +1,18 @@
 experiences:
 
 - place: "University of Minnesota"
+  time: "Jan 2024 - May 2024"
+  title: "Teaching Assistant"
+  subtitle: "ME 4054W - Senior Design Projects"
+  category: "work"
+
+- place: "University of Minnesota"
+  time: "Jan 2024 - Present"
+  title: "Research Assistant"
+  subtitle: "Eric Severson | eLev Lab"
+  category: "work"
+
+- place: "University of Minnesota"
   time: "Sept. 2024 - Present"
   title: "PhD. Student"
   subtitle: "Mechanical Engineering"
